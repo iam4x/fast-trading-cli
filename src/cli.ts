@@ -74,7 +74,7 @@ export class CLI {
       const commandsList = this.commands
         .map((c) => {
           const spaces = times(
-            10 - (c.method.length + (c.alias ? 3 : 0)),
+            20 - (c.method.length + (c.alias ? 3 : 0)),
             () => " ",
           );
 
