@@ -3,6 +3,7 @@ import {
   printMarketOrderHelp,
   shortCommand,
 } from "./commands/market.command";
+import { limitOrderCommand, limitOrderHelp } from "./commands/order.command";
 import {
   closePositionCommand,
   closePositionHelp,
@@ -45,5 +46,11 @@ export const DEFAULT_CLI_COMMANDS: Command[] = [
     description: "Reduce a position",
     help: printManagePositionHelp("reduce"),
     exec: reducePositionCommand,
+  },
+  {
+    method: Commands.Order,
+    alias: Commands.OrderAlias,
+    help: limitOrderHelp,
+    exec: limitOrderCommand,
   },
 ];

@@ -1,5 +1,5 @@
 import type { FastTradingApi } from "fast-trading-api";
-import type { Account, Ticker } from "fast-trading-api/types";
+import { OrderSide, type Account, type Ticker } from "fast-trading-api/types";
 
 import { Severity, type OnMessage } from "./types";
 import { pFloat } from "./utils/p-float.utils";
@@ -61,29 +61,29 @@ export const checkSymbol = ({
 };
 
 export const checkUSDAmount = ({
-  amountString,
+  amountStr,
   onMessage,
-  ticker,
+  price,
 }: {
-  ticker: Ticker;
-  amountString: string;
+  price: number;
+  amountStr: string;
   onMessage: OnMessage;
 }) => {
-  if (!amountString) {
+  if (!amountStr) {
     onMessage("Amount is required", Severity.Error);
     return;
   }
 
-  let amount = pFloat(amountString.replace(/\$|k/g, ""));
+  let amount = pFloat(amountStr.replace(/\$|k/g, ""));
 
-  if (amountString.startsWith("$") && amountString.endsWith("k")) {
-    amount = (amount * 1000) / ticker.last;
-  } else if (amountString.startsWith("$")) {
-    amount = amount / ticker.last;
+  if (amountStr.startsWith("$") && amountStr.endsWith("k")) {
+    amount = (amount * 1000) / price;
+  } else if (amountStr.startsWith("$")) {
+    amount = amount / price;
   }
 
   if (isNaN(amount)) {
-    onMessage(`Invalid amount: ${amountString}`, Severity.Error);
+    onMessage(`Invalid amount: ${amountStr}`, Severity.Error);
     return;
   }
 
@@ -114,18 +114,55 @@ export const checkPosition = ({
 };
 
 export const checkPercent = ({
-  percentString,
+  percentStr,
   onMessage,
 }: {
-  percentString: string;
+  percentStr: string;
   onMessage: OnMessage;
 }) => {
-  const percent = parseInt(percentString, 10);
+  const percent = parseInt(percentStr, 10);
 
   if (isNaN(percent)) {
-    onMessage(`Invalid percentage: ${percentString}`, Severity.Error);
+    onMessage(`Invalid percentage: ${percentStr}`, Severity.Error);
     return;
   }
 
   return percent;
+};
+
+export const checkSide = ({
+  sideStr,
+  onMessage,
+}: {
+  sideStr: string;
+  onMessage: OnMessage;
+}) => {
+  if (!sideStr) {
+    onMessage("Side is required", Severity.Error);
+    return;
+  }
+
+  if (sideStr !== "buy" && sideStr !== "sell") {
+    onMessage(`Invalid side: ${sideStr}`, Severity.Error);
+    return;
+  }
+
+  return sideStr === "buy" ? OrderSide.Buy : OrderSide.Sell;
+};
+
+export const checkPrice = ({
+  priceStr,
+  onMessage,
+}: {
+  priceStr: string;
+  onMessage: OnMessage;
+}) => {
+  const price = pFloat(priceStr);
+
+  if (isNaN(price)) {
+    onMessage(`Invalid price: ${priceStr}`, Severity.Error);
+    return;
+  }
+
+  return price;
 };

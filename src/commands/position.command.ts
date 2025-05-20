@@ -60,12 +60,12 @@ export const increasePositionCommand = ({
   onMessage,
   args,
 }: ExecParams) => {
-  const [accountId, symbol, percentString] = args;
+  const [accountId, symbol, percentStr] = args;
 
   const account = checkAccount({ accountId, api, onMessage });
   if (!account) return;
 
-  const percent = checkPercent({ percentString, onMessage });
+  const percent = checkPercent({ percentStr, onMessage });
   if (!percent) return;
 
   if (symbol === "all") {
@@ -109,12 +109,12 @@ export const increasePositionCommand = ({
 };
 
 export const reducePositionCommand = ({ api, onMessage, args }: ExecParams) => {
-  const [accountId, symbol, percentString] = args;
+  const [accountId, symbol, percentStr] = args;
 
   const account = checkAccount({ accountId, api, onMessage });
   if (!account) return;
 
-  const percent = checkPercent({ percentString, onMessage });
+  const percent = checkPercent({ percentStr, onMessage });
   if (!percent) return;
 
   if (symbol === "all") {

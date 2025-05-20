@@ -4,7 +4,7 @@ import { checkAccount, checkSymbol, checkUSDAmount } from "~/checks";
 import { type ExecParams } from "~/types";
 
 export const longCommand = ({ api, onMessage, args }: ExecParams) => {
-  const [accountId, symbol, amountString] = args;
+  const [accountId, symbol, amountStr] = args;
 
   const account = checkAccount({ accountId, api, onMessage });
   if (!account) return;
@@ -12,7 +12,7 @@ export const longCommand = ({ api, onMessage, args }: ExecParams) => {
   const ticker = checkSymbol({ symbol, account, api, onMessage });
   if (!ticker) return;
 
-  const amount = checkUSDAmount({ amountString, onMessage, ticker });
+  const amount = checkUSDAmount({ amountStr, onMessage, price: ticker.last });
   if (!amount) return;
 
   api.placeOrder({
@@ -29,7 +29,7 @@ export const longCommand = ({ api, onMessage, args }: ExecParams) => {
 };
 
 export const shortCommand = ({ api, onMessage, args }: ExecParams) => {
-  const [accountId, symbol, amountString] = args;
+  const [accountId, symbol, amountStr] = args;
 
   const account = checkAccount({ accountId, api, onMessage });
   if (!account) return;
@@ -37,7 +37,7 @@ export const shortCommand = ({ api, onMessage, args }: ExecParams) => {
   const ticker = checkSymbol({ symbol, account, api, onMessage });
   if (!ticker) return;
 
-  const amount = checkUSDAmount({ amountString, onMessage, ticker });
+  const amount = checkUSDAmount({ amountStr, onMessage, price: ticker.last });
   if (!amount) return;
 
   api.placeOrder({

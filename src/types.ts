@@ -39,4 +39,6 @@ export enum Commands {
   Close = "close",
   Increase = "increase",
   Reduce = "reduce",
+  Order = "order",
+  OrderAlias = "o",
 }
