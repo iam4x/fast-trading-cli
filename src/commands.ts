@@ -3,7 +3,12 @@ import {
   printMarketOrderHelp,
   shortCommand,
 } from "./commands/market.command";
-import { limitOrderCommand, limitOrderHelp } from "./commands/order.command";
+import {
+  cancelOrderCommand,
+  cancelOrderHelp,
+  limitOrderCommand,
+  limitOrderHelp,
+} from "./commands/order.command";
 import {
   closePositionCommand,
   closePositionHelp,
@@ -52,5 +57,11 @@ export const DEFAULT_CLI_COMMANDS: Command[] = [
     alias: Commands.OrderAlias,
     help: limitOrderHelp,
     exec: limitOrderCommand,
+  },
+  {
+    method: Commands.CancelOrder,
+    alias: Commands.CancelOrderAlias,
+    help: cancelOrderHelp,
+    exec: cancelOrderCommand,
   },
 ];

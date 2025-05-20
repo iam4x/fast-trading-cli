@@ -41,4 +41,6 @@ export enum Commands {
   Reduce = "reduce",
   Order = "order",
   OrderAlias = "o",
+  CancelOrder = "cancel",
+  CancelOrderAlias = "x",
 }

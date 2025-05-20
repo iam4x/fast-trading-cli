@@ -72,6 +72,52 @@ export const limitOrderCommand = ({ api, onMessage, args }: ExecParams) => {
   });
 };
 
+const getOrderSide = (sideString: string) => {
+  return sideString === "buy" ? OrderSide.Buy : OrderSide.Sell;
+};
+
+export const cancelOrderCommand = ({ api, onMessage, args }: ExecParams) => {
+  const [accountId, symbol, sideStr] = args;
+
+  const account = checkAccount({ accountId, api, onMessage });
+  if (!account) return;
+
+  const accountOrders =
+    api.store.memory[account.exchange].private[account.id].orders;
+
+  if (sideStr && sideStr !== "buy" && sideStr !== "sell") {
+    onMessage(`Invalid side: ${sideStr}`, Severity.Error);
+    return;
+  }
+
+  if (symbol === "all") {
+    const orders = sideStr
+      ? accountOrders.filter((o) => o.side === getOrderSide(sideStr))
+      : accountOrders;
+
+    api.cancelOrders({
+      accountId: account.id,
+      orderIds: orders.map((o) => o.id),
+    });
+
+    return;
+  }
+
+  const ticker = checkSymbol({ symbol, account, api, onMessage });
+  if (!ticker) return;
+
+  const orders = sideStr
+    ? accountOrders.filter(
+        (o) => o.symbol === ticker.symbol && o.side === getOrderSide(sideStr),
+      )
+    : accountOrders.filter((o) => o.symbol === ticker.symbol);
+
+  api.cancelOrders({
+    accountId: account.id,
+    orderIds: orders.map((o) => o.id),
+  });
+};
+
 export const limitOrderHelp = `
 Place a limit order
 
@@ -86,4 +132,18 @@ Examples:
 
 Alias:
   ${Commands.OrderAlias}
+`;
+
+export const cancelOrderHelp = `
+Cancel orders
+
+Usage:
+  ${Commands.CancelOrder} [accountId] [symbol | all] [side]
+
+Examples:
+  ${Commands.CancelOrder} main btc
+  ${Commands.CancelOrder} sub all buy
+
+Alias:
+  ${Commands.CancelOrderAlias}
 `;
