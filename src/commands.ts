@@ -23,6 +23,7 @@ import { Commands, type Command } from "~/types";
 export const DEFAULT_CLI_COMMANDS: Command[] = [
   {
     method: Commands.Balance,
+    description: "Print the balance of accounts",
     exec: printBalanceCommand,
   },
   {
@@ -59,6 +60,7 @@ export const DEFAULT_CLI_COMMANDS: Command[] = [
   },
   {
     method: Commands.Order,
+    description: "Place a limit order",
     alias: Commands.OrderAlias,
     help: limitOrderHelp,
     exec: limitOrderCommand,
@@ -66,6 +68,7 @@ export const DEFAULT_CLI_COMMANDS: Command[] = [
   {
     method: Commands.CancelOrder,
     alias: Commands.CancelOrderAlias,
+    description: "Cancel one or multiple orders",
     help: cancelOrderHelp,
     exec: cancelOrderCommand,
   },
