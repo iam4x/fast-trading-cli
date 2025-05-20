@@ -83,23 +83,23 @@ export class CLI {
         .join("\n  ");
 
       const help = `
-        Available Commands:
-          ${commandsList}
+Available Commands:
+  ${commandsList}
 
-        Chain commands:
-          You can execute multiple commands by separating them with a semicolon (;)
-          Example: command1 arg1 arg2; command2 arg1 arg2
+Chain commands:
+  You can execute multiple commands by separating them with a semicolon (;)
+  Example: command1 arg1 arg2; command2 arg1 arg2
 
-        Flags:
-          -h, --help      Help for commands
+Flags:
+  -h, --help      Help for commands
       `;
 
       return this.onMessage(help, Severity.Info);
     }
 
     const error = `
-      Command not found: ${value}
-      To see a list of supported commans, run: help
+Command not found: ${value}
+To see a list of supported commans, run: help
     `;
 
     this.onMessage(error, Severity.Error);

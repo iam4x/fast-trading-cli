@@ -55,14 +55,14 @@ export const shortCommand = ({ api, onMessage, args }: ExecParams) => {
 
 export const printMarketOrderHelp = (verb: "long" | "short") => {
   return `
-    Execute ${verb} order
+Execute ${verb} order
 
-    Usage:
-      ${verb} [accountId] [symbol] [amount]
+Usage:
+  ${verb} [accountId] [symbol] [amount]
 
-    Examples:
-      ${verb} sub btc 0.1
-      ${verb} sub btc $500
-      ${verb} main btc $100k
+Examples:
+  ${verb} sub btc 0.1
+  ${verb} sub btc $500
+  ${verb} main btc $100k
   `;
 };

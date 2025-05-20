@@ -158,26 +158,26 @@ export const reducePositionCommand = ({ api, onMessage, args }: ExecParams) => {
 };
 
 export const closePositionHelp = `
-  Close a position
+Close a position
 
-  Usage:
-    ${Commands.Close} [accountId] [symbol | all]
+Usage:
+  ${Commands.Close} [accountId] [symbol | all]
 
-  Examples:
-    ${Commands.Close} main btc
-    ${Commands.Close} sub all
+Examples:
+  ${Commands.Close} main btc
+  ${Commands.Close} sub all
 `;
 
 export const printManagePositionHelp = (verb: string) => {
   return `
-    ${capitalize(verb)} a position
+${capitalize(verb)} a position
 
-    Usage:
-      ${verb} [accountId] [symbol | all] [percentage]
+Usage:
+  ${verb} [accountId] [symbol | all] [percentage]
 
-    Examples:
-      ${verb} main btc 50%
-      ${verb} sub eth 25%
-      ${verb} main all 10%
+Examples:
+  ${verb} main btc 50%
+  ${verb} sub eth 25%
+  ${verb} main all 10%
   `;
 };
