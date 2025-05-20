@@ -1,3 +1,4 @@
+import { printBalanceCommand } from "./commands/balance.command";
 import {
   longCommand,
   printMarketOrderHelp,
@@ -20,6 +21,10 @@ import {
 import { Commands, type Command } from "~/types";
 
 export const DEFAULT_CLI_COMMANDS: Command[] = [
+  {
+    method: Commands.Balance,
+    exec: printBalanceCommand,
+  },
   {
     method: Commands.Long,
     alias: Commands.LongAlias,

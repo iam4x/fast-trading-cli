@@ -30,6 +30,7 @@ export interface Command {
 }
 
 export enum Commands {
+  Balance = "bal",
   Help = "help",
   HelpAlias = "h",
   Long = "long",
