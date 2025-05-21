@@ -7,22 +7,22 @@
         "fast-trading-api": "^1.0.2",
       },
       "devDependencies": {
-        "@eslint/js": "^9.25.1",
+        "@eslint/js": "^9.27.0",
         "@types/bun": "latest",
-        "@typescript-eslint/parser": "^8.31.0",
-        "eslint": "^9.25.1",
+        "@typescript-eslint/parser": "^8.32.1",
+        "eslint": "^9.27.0",
         "eslint-config-prettier": "10.1.1",
         "eslint-import-resolver-typescript": "4.3.1",
         "eslint-plugin-import": "^2.31.0",
-        "eslint-plugin-prettier": "^5.2.6",
-        "globals": "^16.0.0",
+        "eslint-plugin-prettier": "^5.4.0",
+        "globals": "^16.1.0",
         "husky": "^9.1.7",
         "prettier": "^3.5.3",
-        "tsc-alias": "^1.8.15",
-        "typescript-eslint": "^8.31.0",
+        "tsc-alias": "^1.8.16",
+        "typescript-eslint": "^8.32.1",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5.8.3",
       },
     },
   },
@@ -269,7 +269,7 @@
 
     "fast-levenshtein": ["fast-levenshtein@2.0.6", "", {}, "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="],
 
-    "fast-trading-api": ["fast-trading-api@1.0.2", "", { "dependencies": { "hash-wasm": "^4.12.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-W6AKhy8obMVSfGIOQQntUQtXPCXfI4ech1z2gGcJCHhorYMWca4CSGi7p5RpFMM7ml6BSdJKFhUtsXk4qzWLTw=="],
+    "fast-trading-api": ["fast-trading-api@1.0.4", "", { "dependencies": { "hash-wasm": "^4.12.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-+FjWYrSRIoDB93FxZguvsfdhUb8UNPwvyEVbicBXJkofq6mdE9B/26XDtNhgKSgSo/zhDDrcGugarNtFisXaZA=="],
 
     "fastq": ["fastq@1.19.1", "", { "dependencies": { "reusify": "^1.0.4" } }, "sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ=="],
 
