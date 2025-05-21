@@ -1,3 +1,4 @@
+import { PositionSide } from "fast-trading-api/types";
 import { sumBy, toUSD } from "fast-trading-api/utils";
 
 import { Severity, type ExecParams } from "~/types";
@@ -15,8 +16,16 @@ export const printBalanceCommand = ({ api, onMessage }: ExecParams) => {
     const positions =
       api.store.memory[account.exchange].private[account.id].positions;
 
-    const longExposure = sumBy(positions, (p) => p.notional);
-    const shortExposure = sumBy(positions, (p) => p.notional);
+    const longExposure = sumBy(
+      positions.filter((p) => p.side === PositionSide.Long),
+      (p) => p.notional,
+    );
+
+    const shortExposure = sumBy(
+      positions.filter((p) => p.side === PositionSide.Short),
+      (p) => p.notional,
+    );
+
     const upnlPercent = (balance.upnl / balance.total) * 100;
     const accountLeverage = (longExposure + shortExposure) / balance.total;
 
