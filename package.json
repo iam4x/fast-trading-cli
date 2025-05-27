@@ -43,6 +43,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "fast-trading-api": "^1.1.1"
+    "fast-trading-api": "^1.1.2"
   }
 }
