@@ -2,7 +2,7 @@
   "name": "fast-trading-cli",
   "module": "index.ts",
   "license": "MIT",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
