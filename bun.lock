@@ -4,13 +4,13 @@
     "": {
       "name": "fast-trading-cli",
       "dependencies": {
-        "fast-trading-api": "^1.6.0",
+        "fast-trading-api": "^1.6.1",
       },
       "devDependencies": {
-        "@eslint/js": "^9.30.1",
+        "@eslint/js": "^9.31.0",
         "@types/bun": "latest",
         "@typescript-eslint/parser": "^8.36.0",
-        "eslint": "^9.30.1",
+        "eslint": "^9.31.0",
         "eslint-config-prettier": "10.1.1",
         "eslint-import-resolver-typescript": "4.3.1",
         "eslint-plugin-import": "^2.32.0",
@@ -283,7 +283,7 @@
 
     "fast-levenshtein": ["fast-levenshtein@2.0.6", "", {}, "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="],
 
-    "fast-trading-api": ["fast-trading-api@1.6.1", "", { "dependencies": { "@msgpack/msgpack": "^3.1.2", "@noble/curves": "^1.9.1", "@noble/hashes": "^1.8.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-MwSNpS1Simb2bL5mG1xoJYZAiGGdeQo7MKuFuW2iXixw5Q9xIydRGbuA2DFhtEIJkJd1XFGSeA6oq5ogWnZL4g=="],
+    "fast-trading-api": ["fast-trading-api@1.6.2", "", { "dependencies": { "@msgpack/msgpack": "^3.1.2", "@noble/curves": "^1.9.1", "@noble/hashes": "^1.8.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-L40wyB5XFY+ueXaMmia+JbLJVfH30InSe7k3beILGuPAS0Dc5ERmKoO8yNtcxW/15pEA25avaOWikxKF+Oo9jA=="],
 
     "fastq": ["fastq@1.19.1", "", { "dependencies": { "reusify": "^1.0.4" } }, "sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ=="],
 
