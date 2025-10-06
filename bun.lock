@@ -283,7 +283,7 @@
 
     "fast-levenshtein": ["fast-levenshtein@2.0.6", "", {}, "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="],
 
-    "fast-trading-api": ["fast-trading-api@1.7.0", "", { "dependencies": { "@msgpack/msgpack": "^3.1.2", "@noble/curves": "^1.9.7", "@noble/hashes": "^1.8.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-JWvCUurUQEB1P4sS/q/JmCAsMJZaIYwcsGCRO9zGds4Fm7BZcmai2YKIGjA1PMgEqAzl51/pbQOzxcHrCfWVXg=="],
+    "fast-trading-api": ["fast-trading-api@1.7.1", "", { "dependencies": { "@msgpack/msgpack": "^3.1.2", "@noble/curves": "^1.9.7", "@noble/hashes": "^1.8.0" }, "peerDependencies": { "typescript": "^5.8.2" } }, "sha512-iozJ+Gnsj5FfV+/qaH9nWdjIWcEQb7KfHPVGtNGDz3wKmcFj7lwybUFhoH3zaxsdA3s204eGnVdiSLzFaVC3Bg=="],
 
     "fastq": ["fastq@1.19.1", "", { "dependencies": { "reusify": "^1.0.4" } }, "sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ=="],
 
